@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class TinhTong {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nhap vao so nguyen duong N: ");
+        int n = scanner.nextInt();
+
+        // Kiểm tra điều kiện số nguyên dươngán
+        if (n <= 0) {
+            System.out.println("So nhap vao ko hop le");
+        } else {
+            int tong = 0;
+
+            // Vòng lặp tính tổng từ 1 đến N
+            for (int i = 1; i <= n; i++) {
+                tong += i;
+            }
+
+            System.out.println("Ton tu 1 den " + n + " la: " + tong);
+        }
+
+        scanner.close();
+    }
+}
