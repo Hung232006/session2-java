@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class KiemTraTamGiac {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nhap canh a: ");
+        int a = scanner.nextInt();
+        System.out.print("Nhap canh b: ");
+        int b = scanner.nextInt();
+        System.out.print("Nhap canh c: ");
+        int c = scanner.nextInt();
+
+        // Kiem tra dieu kien hop le de tao thanh tam giac
+        if ((a + b > c) && (a + c > b) && (b + c > a)) {
+            
+            //  Kiem tra tam giac deu
+            if (a == b && b == c) {
+                System.out.println("Tam giac deu");
+            } 
+            //  Kiem tra tam giac can
+            else if (a == b || a == c || b == c) {
+                System.out.println("Tam giac can");
+            } 
+            //  Kiem tra tam giac vuong
+            else if ((a * a + b * b == c * c) || (a * a + c * c == b * b) || (b * b + c * c == a * a)) {
+                System.out.println("Tam giac vuong");
+            } 
+            //  Truong hop con lai la tam giac thuong
+            else {
+                System.out.println("Tam giac thuong");
+            }
+            
+        } else {
+            // Thong bao loi neu khong phai tam giac
+            System.out.println("Ba canh khong tao thanh tam giac.");
+        }
+
+        scanner.close();
+    }
+}
