@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class TinhTongCacChuSo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Nhap vao mot so nguyen N: ");
+        int n = scanner.nextInt();
+
+        // Neu so am thi chuyen thanh so duong
+        int soGoc = Math.abs(n);
+        int tong = 0;
+
+        // Vong lap tach tung chu so va cong don
+        while (soGoc > 0) {
+            int chuSo = soGoc % 10; // Lay chu so cuoi cung
+            tong += chuSo;          // Cong vao tong
+            soGoc /= 10;            // Bo chu so cuoi cung di
+        }
+
+        System.out.println("Tong cac chu so cua " + n + " la: " + tong);
+
+        scanner.close();
+    }
+}
